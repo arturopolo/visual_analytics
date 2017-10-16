@@ -1,2 +1,46 @@
-This is test
-<a href="nowhere">Nowhere</a>
+<meta charset="UTF-8"> 
+<html>
+  <head>
+    <!-- d3 -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+      p {
+        text-align: justify;
+        text-justify: inter-word;
+      }
+
+      div.tooltip {
+        position: absolute;
+        text-align: center;
+        width: 200px;
+        height: 50px;
+        padding: 2px;
+        font: 12px sans-serif;
+        background: black;
+        color: white;
+        border: 0px;
+        border-radius: 2px;
+        pointer-events: none;
+      }
+    </style>
+    <title>Computadores para educar</title>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <h3>Computadores para educar... ¿pero dónde?<small> - Christian Poveda</small></h3>
+      <div class="row"> 
+        <div id="chart" class="col-md-7">
+        </div>
+        <div id="text" class="col-md-5">
+          <p>Las regiones más pobladas (<span style="color:#ff7f00;">Andina</span> y <span style="color:#377eb8;">Caribe</span>) suelen tener más computadores por cada 100 niños. Mientras que las regiones menos pobladas y más rurales (<span style="color:#e41a1c;">Orinoquía</span>, <span style="color:#984ea3;">Pacífico</span> y <span style="color:#4daf4a;">Amazonía</span>) estan resagadas en este aspecto salvo sus departamentos más poblados: Meta y Valle del Cauca.</p>
+
+          <p>Datos extraidos de la proyección de población del <a href="http://www.dane.gov.co/files/investigaciones/poblacion/proyepobla06_20/7Proyecciones_poblacion.pdf">DANE</a> para el año 2015 (de habitantes entre 5 y 18 años) y de <a href="https://www.datos.gov.co/Ciencia-Tecnolog-a-e-Innovaci-n/Computadores-Para-Educar/pyqj-s96k/data">Datos abiertos</a>.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="static/index.js"></script>
+</html>
