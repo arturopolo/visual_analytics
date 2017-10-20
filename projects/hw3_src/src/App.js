@@ -28,6 +28,8 @@ class App extends Component {
   }
 
   handleGraph(graph) {
+    graph.links = graph.links.filter(({ source, target }) => source !== target);
+
     let freqs = new Map()
     graph.links.forEach(({ value }) => {
       value = 10*Math.floor( value / 10 );
@@ -37,6 +39,7 @@ class App extends Component {
         freqs.set(value, 1);
       }
     });
+
     this.setState({
       graph: graph,
       freqs: Array.from(freqs).map(([value, count]) => ({x: value, y: count}))}
