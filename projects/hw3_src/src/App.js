@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   getGraph() {
-    fetch("http://christianpoveda.github.io/visual_analytics/projects/hw3/data/graph.json")
+    fetch("https://christianpoveda.github.io/visual_analytics/projects/hw3/data/graph.json")
       .then((response) => response.json())
       .then(this.handleGraph.bind(this));
   }
