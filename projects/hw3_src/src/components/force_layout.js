@@ -24,12 +24,11 @@ const ForceLayout = ({ data }) => {
         simulationOptions={{
           height: 400,
           width: 1024,
-          animate: true
+          animate: true,
+          alpha: 0.8
         }}
-        labelAttr="label"
-        labelOffset={{x: () => (10), y: () => (10)}}
         highlightDependencies
-        onSelectNode={(node) => console.log(node)}>
+        labelAttr="label">
         { nodes }
         { links }
       </InteractiveForceGraph>
