@@ -17,7 +17,7 @@ const colors = {
 
 const ForceLayout = ({ data }) => {
   let nodes = data.nodes.map(({id, group}) => <ForceGraphNode key={id} node={{id: id, label: id, radius: 5}} fill={colors[group]}/>);
-  let links = data.links.map(({source, target, value}) => <ForceGraphLink key={`${source}-${target}`} link={{source: source, target: target, value: Math.sqrt(value)/2}}/>);
+  let links = data.links.map(({source, target, value}) => <ForceGraphLink opacity={0.1} key={`${source}-${target}`} link={{source: source, target: target, value: Math.sqrt(value)/2}}/>);
   return (
     <div>
       <InteractiveForceGraph
