@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
+
 import '../node_modules/react-vis/dist/style.css';
+import 'semantic-ui-css/semantic.min.css';
+
+import { Segment, Container, Menu, Button, Popup } from 'semantic-ui-react';
+
 import ForceLayout from './components/force_layout';
 import Barchart from './components/barchart';
 
+const insights = (
+  <div style={{textAlign: "justify"}}>
+    <p>Cupcake ipsum dolor sit amet. Dessert sesame snaps topping tiramisu dragée pudding. I love jelly powder I love I love sweet roll sesame snaps.</p>
+    <p>Carrot cake liquorice I love pie I love. Candy gingerbread carrot cake croissant cake gummi bears icing biscuit wafer. Apple pie gummi bears gingerbread sweet pudding caramels I love.</p>
+    <p>Fruitcake cake candy canes. Tart gummi bears biscuit bear claw jelly-o soufflé soufflé apple pie. Tiramisu liquorice candy canes fruitcake. Ice cream soufflé sweet I love jelly oat cake.</p>
+  </div>
+);
 class App extends Component {
   constructor(props) {
     super(props);
@@ -62,12 +74,12 @@ class App extends Component {
 
     let links = this.state.graph.links.filter(({ value }) => value >= point.x);
     let ids = new Set();
-    
+
     links.forEach(({ source, target }) => {
       ids.add(source);
       ids.add(target);
     });
-    
+
     let nodes = this.state.graph.nodes.filter(({ id }) => ids.has(id));
 
     this.setState({
@@ -81,9 +93,21 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <ForceLayout data={this.state.visibleGraph} />
-        <Barchart data={this.state.freqs} onBarClick={this.onBarClick.bind(this)} />
+      <div className="App" style={{width: "100%", height: "100vh"}}>
+        <Container style={{ height: "100%"}}>
+          <Menu inverted>
+            <Menu.Item header>HW3 by Christian Poveda</Menu.Item>
+            <Menu.Menu position='right'>
+              <Popup inverted content={insights} style={{opacity: 0.7}}trigger={<Menu.Item>Insights</Menu.Item>}/>
+            </Menu.Menu>
+          </Menu>    
+          <Segment style={{width: "100%", height: "calc(60% - 40px - 1rem)"}}>
+            <ForceLayout data={this.state.visibleGraph} />
+          </Segment>
+          <Segment style={{width: "100%", height: "calc(40% - 1rem)"}}>
+            <Barchart data={this.state.freqs} onBarClick={this.onBarClick.bind(this)} />
+          </Segment>
+        </Container>
       </div>
     );
   }
