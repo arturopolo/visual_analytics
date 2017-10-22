@@ -8,11 +8,11 @@ import { Segment, Container, Menu, Popup } from 'semantic-ui-react';
 import ForceLayout from './components/force_layout';
 import Barchart from './components/barchart';
 
-const insights = (
+const about = (
   <div style={{textAlign: "justify"}}>
-    <p>Cupcake ipsum dolor sit amet. Dessert sesame snaps topping tiramisu dragée pudding. I love jelly powder I love I love sweet roll sesame snaps.</p>
-    <p>Carrot cake liquorice I love pie I love. Candy gingerbread carrot cake croissant cake gummi bears icing biscuit wafer. Apple pie gummi bears gingerbread sweet pudding caramels I love.</p>
-    <p>Fruitcake cake candy canes. Tart gummi bears biscuit bear claw jelly-o soufflé soufflé apple pie. Tiramisu liquorice candy canes fruitcake. Ice cream soufflé sweet I love jelly oat cake.</p>
+    <p>This is a visualization of the co-ocurrences between labels on the Rust's issue tracker.</p>
+    <p>Each node represents one label and each link between nodes represents the number of co-ocurrences between those labels.</p>
+    <p>The chart at the bottom of the page its an histogram of the number of co-ocurrences, you can use it to filter the nodes and only display those that have more than a certain number of co-occurrences with other nodes.</p>
   </div>
 );
 class App extends Component {
@@ -98,7 +98,7 @@ class App extends Component {
           <Menu inverted>
             <Menu.Item header>Rusty Issues by Christian Poveda</Menu.Item>
             <Menu.Menu position='right'>
-              <Popup inverted content={insights} style={{opacity: 0.7}}trigger={<Menu.Item>Insights</Menu.Item>}/>
+              <Popup inverted content={about} style={{opacity: 0.7}}trigger={<Menu.Item>About</Menu.Item>}/>
             </Menu.Menu>
           </Menu>    
           <Segment style={{width: "100%", height: "calc(60% - 40px - 1rem)"}}>
