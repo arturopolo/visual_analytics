@@ -12,6 +12,10 @@ const colors = {
   "S": "#D9E2E2",
   "T": "#C8DAF3",
   "WG": "#CBE4CE",
+  "regression": "#FF4EAD",
+  "proposed": "#EFEFEF",
+  "metabug": "#6C3BEA",
+  "beta": "#4190E8",
   "None": "purple"
 }
 
