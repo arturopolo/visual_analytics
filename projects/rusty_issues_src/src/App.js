@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import '../node_modules/react-vis/dist/style.css';
 import 'semantic-ui-css/semantic.min.css';
 
-import { Segment, Container, Menu, Button, Popup } from 'semantic-ui-react';
+import { Segment, Container, Menu, Popup } from 'semantic-ui-react';
 
 import ForceLayout from './components/force_layout';
 import Barchart from './components/barchart';
@@ -96,7 +96,7 @@ class App extends Component {
       <div className="App" style={{width: "100%", height: "100vh"}}>
         <Container style={{ height: "100%"}}>
           <Menu inverted>
-            <Menu.Item header>HW3 by Christian Poveda</Menu.Item>
+            <Menu.Item header>Rusty Issues by Christian Poveda</Menu.Item>
             <Menu.Menu position='right'>
               <Popup inverted content={insights} style={{opacity: 0.7}}trigger={<Menu.Item>Insights</Menu.Item>}/>
             </Menu.Menu>
