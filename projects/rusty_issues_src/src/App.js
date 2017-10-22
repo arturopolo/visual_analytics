@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   getGraph() {
-    fetch("https://christianpoveda.github.io/visual_analytics/projects/hw3/data/graph.json")
+    fetch("https://christianpoveda.github.io/visual_analytics/projects/rusty_issues/data/graph.json")
       .then((response) => response.json())
       .then(this.handleGraph.bind(this));
   }
